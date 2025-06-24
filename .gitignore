@@ -162,3 +162,9 @@ cython_debug/
 # data folder
 data/
 ssd-2025/
+
+# outputs  
+
+notebook/*pdf
+notebook/*png
+notebook/*txt
