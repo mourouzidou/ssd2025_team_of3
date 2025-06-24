@@ -1,1 +1,2 @@
-# ssd2025_team_of3
+# scientific-software-development
+initial repo for assignment in the course "Scientific Software Development"
