@@ -45,6 +45,16 @@ class ProcessDataPd:
             return upper_corr
         return None
 
+    def euclidean_distance(self, col1: str, col2: str):
+        """
+        Calculate the Euclidean distance between two columns.
+        """
+        if self.data is not None and col1 in self.data.columns and col2 in self.data.columns:
+            distance = np.sqrt(np.sum((self.data[col1] - self.data[col2]) ** 2))
+            return distance
+        else:
+            raise ValueError(f"Columns {col1} or {col2} not found in the data.")
+        return None
 
 
     
