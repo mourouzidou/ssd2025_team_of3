@@ -10,4 +10,3 @@ class FourrierTranformData:
         self.data_fft = np.fft.rfft(self.data)
         self.frequencies = np.fft.rfftfreq(len(self.data), d=1.0)
     
-    
