@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+
 # create a class ProcessData to load and process data
 class ProcessDataPd:
     """
@@ -12,6 +13,7 @@ class ProcessDataPd:
     filter columns by variance, create the upper triangle of the correlation matrix,
     and get sorted correlations from the correlation matrix.
     """
+
     def __init__(self, file_path: str):
         self.file_path = file_path
         self.data = None
@@ -51,6 +53,7 @@ class ProcessDataPd:
             upper_corr = corr.where(mask)
             return upper_corr
         return None
+
     
 
 
@@ -74,4 +77,16 @@ class ProcessDataPd:
         return sorted_correlations
 
 
+    def euclidean_distance(self, col1: str, col2: str):
+        """
+        Calculate the Euclidean distance between two columns.
+        """
+        if self.data is not None and col1 in self.data.columns and col2 in self.data.columns:
+            distance = np.sqrt(np.sum((self.data[col1] - self.data[col2]) ** 2))
+            return distance
+        else:
+            raise ValueError(f"Columns {col1} or {col2} not found in the data.")
+        return None
 
+
+   
