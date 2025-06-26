@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>process_data module &#8212; ssd_course_team3 [0.0.1] documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=87649aad"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="create_plots module" href="create_plots.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-process_data">
+<span id="process-data-module"></span><h1>process_data module<a class="headerlink" href="#module-process_data" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">process_data.</span></span><span class="sig-name descname"><span class="pre">ProcessDataPd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to load and process data from a CSV file.
+This class provides methods to load data, discard columns by index,
+filter columns by variance, create the upper triangle of the correlation matrix,
+and get sorted correlations from the correlation matrix.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.discard_columns_by_index">
+<span class="sig-name descname"><span class="pre">discard_columns_by_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.discard_columns_by_index" title="Link to this definition">¶</a></dt>
+<dd><p>Discard columns by their indices.
+e.g. remove columns with constant values
+[0, 1, 2] will remove the first three columns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.euclidean_distance">
+<span class="sig-name descname"><span class="pre">euclidean_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.euclidean_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the Euclidean distance between two columns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.filter_by_variance">
+<span class="sig-name descname"><span class="pre">filter_by_variance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.filter_by_variance" title="Link to this definition">¶</a></dt>
+<dd><p>Filter columns by variance.
+e.g. remove columns with variance below the threshold.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.get_sorted_correlations">
+<span class="sig-name descname"><span class="pre">get_sorted_correlations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_to_txt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.get_sorted_correlations" title="Link to this definition">¶</a></dt>
+<dd><p>Get sorted correlations from the correlation matrix.</p>
+<p>Parameters:
+correlation_matrix (DataFrame): The correlation matrix.</p>
+<p>Returns:
+Series: Sorted correlations with absolute values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.load_data">
+<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.load_data" title="Link to this definition">¶</a></dt>
+<dd><p>Load data from a CSV file with an optional index column.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="process_data.ProcessDataPd.upper_correlation_triangle">
+<span class="sig-name descname"><span class="pre">upper_correlation_triangle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#process_data.ProcessDataPd.upper_correlation_triangle" title="Link to this definition">¶</a></dt>
+<dd><p>Create the upper triangle of the correlation matrix.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ssd_course_team3</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README_link.html">ssd_course_team3</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="create_plots.html">create_plots module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">process_data module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+      <li>Previous: <a href="create_plots.html" title="previous chapter">create_plots module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Eleni Mourouzidou.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/process_data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
