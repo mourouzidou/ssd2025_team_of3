@@ -11,7 +11,7 @@ import os
 sys.path.insert(0, os.path.abspath('../../src/'))
 project = 'ssd_course_team3'
 copyright = '2025, Eleni Mourouzidou'
-author = 'Eleni Mourouzidou'
+author = 'Eleni Mourouzidou, Matheus Bernini-Peron, Carolin Lindow'
 release = '[0.0.1]'
 
 # -- General configuration ---------------------------------------------------
