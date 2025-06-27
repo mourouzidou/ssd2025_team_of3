@@ -1,3 +1,7 @@
+class PlotData:
+    def __init__(self, data):
+        self.data = data
+
 import pandas as pd
 import seaborn as sns
 import numpy as np
