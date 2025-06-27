@@ -1,2 +1,5 @@
-# scientific-software-development
-initial repo for assignment in the course "Scientific Software Development"
+# ssd_course_team3
+
+This package analyzes and plots data using 
+* pandas statistical analysis
+* numpy numerical analysis
