@@ -6,12 +6,13 @@ class LoadDataNP:
     This class provides methods to load data, filter columns by variance, 
     in numpy  
     """
-    def __init__(self, file_path):
-        self.file_path = file_path
+
+    def __init__(self, path):
+        self.file_path = path
 
     def load_data(self):
         try:
-            data = np.load(self.file_path, skiprows=1)
+            data = np.loadtxt(self.file_path, skiprows=1)
             self.time= data[:, 0]
             self.data = data[:, 1:].T
             
@@ -24,7 +25,8 @@ class LoadDataNP:
         if self.data is None:
             return None
         indices = np.nonzero(np.var(self.data, axis=1) > threshold)
-        self.fitered_data = self.data[np.indices]
+        print(indices)
+        self.fitered_data = self.data[indices]
 
 
     
