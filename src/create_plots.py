@@ -19,25 +19,6 @@ class PlotData:
             if save_path:
                 plt.savefig(save_path)
             plt.show()
+            plt.close() 
         else:
-            print("No data available to plot.")
-
-    def plot_histogram(self, column, bins=30, save_path=None):
-        """
-        Plot a histogram of a specified column in the data.
-        If save_path is provided, save the plot to that path.
-        """
-        if self.data is not None and column in self.data.columns:
-            plt.figure(figsize=(10, 6))
-            sns.histplot(self.data[column], bins=bins, kde=True)
-            plt.title(f'Histogram of {column}')
-            if save_path:
-                plt.savefig(save_path)
-            plt.show()
-        else:
-            print(f"No data available for column: {column}")
-
-
-
-
-# create a class CreatePlots to create plots
+            raise ValueError("No data available to plot.")
