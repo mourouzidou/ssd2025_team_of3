@@ -36,7 +36,7 @@ jobs:
         run: |
           cd docs
           make html
-      - name: Push changes to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Push changes to gh-pages # This step will push the built documentation to the `gh-pages` branch
+        uses: JamesIves/github-pages-deploy-action@v4 # by default, this action will deploy to the `gh-pages` branch
         with:
           folder: docs # The folder the action should deploy.
